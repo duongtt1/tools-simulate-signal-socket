@@ -361,6 +361,120 @@ Item {
                 }
             }
         }
+
+        Label {
+            id: label
+            x: 656
+            y: 285
+            width: 143
+            height: 24
+            text: qsTr("Stream RTSP ")
+            font.pointSize: 16
+        }
+
+        Rectangle {
+            id: rectangle
+            x: 656
+            y: 315
+            width: 936
+            height: 133
+            color: "#f3f1f1"
+            radius: 10
+            border.width: 0
+
+            Text {
+                id: lable_channel_emit_sec1
+                x: 15
+                y: 24
+                width: 112
+                height: 36
+                text: qsTr("url")
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                font.pixelSize: 20
+            }
+
+            Rectangle {
+                id: rectangle2
+                x: 752
+                y: 24
+                width: 164
+                height: 43
+                color: "#ffffff"
+                radius: 15
+
+                Text {
+                    id: text3
+                    x: 8
+                    y: 8
+                    width: 148
+                    height: 27
+                    text: qsTr("Start")
+                    horizontalAlignment: Text.AlignHCenter
+                    font.pixelSize: 18
+                }
+
+                MouseArea {
+                    id: btn_start
+                    x: 0
+                    y: 0
+                    width: 164
+                    height: 43
+                    onClicked: {
+                        SysCrtl.startStreamRTSP(ta_url.text)
+                        //                        console.log(ta_url.text)
+                    }
+                }
+            }
+
+            Rectangle {
+                id: rectangle3
+                x: 752
+                y: 85
+                width: 164
+                height: 37
+                color: "#ffffff"
+                radius: 10
+
+                Label {
+                    id: label2
+                    x: 64
+                    y: 8
+                    text: qsTr("End")
+                    font.pointSize: 16
+                }
+
+                MouseArea {
+                    id: end_btn
+                    x: 0
+                    y: 0
+                    width: 164
+                    height: 37
+                    onClicked: {
+                        SysCrtl.endStreamRTSP()
+                    }
+                }
+            }
+        }
+
+        Rectangle {
+            id: rectangle1
+            x: 774
+            y: 335
+            width: 612
+            height: 48
+            color: "#ffffff"
+            radius: 10
+
+            TextArea {
+                id: ta_url
+                x: 8
+                y: 8
+                width: 596
+                height: 31
+                text: qsTr("rtsp://localhost:8554/live")
+            }
+        }
     }
 
     Connections {

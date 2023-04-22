@@ -18,7 +18,8 @@ SOURCES += main.cpp \
     SocketIO/src/RoomControl.cpp \
     SocketIO/src/SckQmlIF.cpp \
     SocketIO/src/socketioclient.cpp \
-    SocketIO/src/SocketMgr.cpp
+    SocketIO/src/SocketMgr.cpp \
+    SysCtrl/sysctrl.cpp
 
 RESOURCES += qml.qrc
 
@@ -52,4 +53,5 @@ HEADERS += \
     SocketIO/inc/RoomControl.h \
     SocketIO/inc/SckQmlIF.h \
     SocketIO/inc/socketioclient.h \
-    SocketIO/inc/SocketMgr.h
+    SocketIO/inc/SocketMgr.h \
+    SysCtrl/sysctrl.h

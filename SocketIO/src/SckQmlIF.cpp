@@ -31,7 +31,7 @@ bool SckQmlIF::subcribeChannel(QString channel){
     SocketIoClient::getInstance().listenForEvent(channel.toStdString(), [&](sio::event& event){
         std::string msg_std = event.get_message()->get_string();
         QString msg = QString::fromUtf8(msg_std.c_str());
-        QString log = "Topic " + channel + " data: " +  msg;
+        QString log = "Topic test2 data: " +  msg;
         Q_EMIT showLog(log);
     });
     QString msg_log = "subcribed channel " + channel;
