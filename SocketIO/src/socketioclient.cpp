@@ -1,4 +1,5 @@
 #include "../inc/socketioclient.h"
+#include <boost/asio.hpp>
 
 std::unique_ptr<SocketIoClient> SocketIoClient::instance = nullptr;
 std::mutex SocketIoClient::mutex;
@@ -16,6 +17,7 @@ SocketIoClient& SocketIoClient::getInstance()
 SocketIoClient::SocketIoClient()
 {
     // Initialize member variables as needed
+
 }
 
 // SocketIoClient::~SocketIoClient()

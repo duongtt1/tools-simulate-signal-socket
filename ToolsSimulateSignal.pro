@@ -7,6 +7,7 @@ CONFIG += no_keywords
 # depend on your compiler). Please consult the documentation of the
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
+DEFINES += SIO_TLS
 
 
 # You can also make your code fail to compile if you use deprecated APIs.
@@ -48,6 +49,8 @@ else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../.
 else:unix: PRE_TARGETDEPS += $$PWD/../../socket.io-client-cpp/libsioclient.a
 
 LIBS += -pthread -fopenmp
+LIBS += -lssl -lcrypto
+LIBS += -lboost_system -lboost_thread -lboost_random -lboost_regex
 
 HEADERS += \
     SocketIO/inc/RoomControl.h \
